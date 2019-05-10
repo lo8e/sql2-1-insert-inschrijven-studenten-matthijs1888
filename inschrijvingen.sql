@@ -22,3 +22,9 @@ UPDATE studenten
 SET geboortedatum = "1993-09-27"
 WHERE ov_nummer = 90000;
 
+
+UPDATE studenten
+SET actief = FALSE
+WHERE inschrijvings_datum =  <"2017-01-01";
+
+
