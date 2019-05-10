@@ -12,7 +12,7 @@ CREATE TABLE `docenten` (
   `docent_code` varchar(10) NOT NULL,
   `voorletters` varchar(10) DEFAULT NULL,
   `tussenvoegsel` varchar(10) DEFAULT NULL,
-  `achternaam` varchar(20) DEFAULT NULL,
+  `achternaam` varchar(20) DEFAULT NULL,	
   PRIMARY KEY (`docent_code`)
 ) ;
 
