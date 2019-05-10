@@ -17,8 +17,7 @@ VALUES (90000, "Jong", "de", "MH", "Mick", "1993-07-27", "2221 nm", "Katwijk ZH"
 INSERT INTO klassen_studenten(ov_nummer, klas_code) VALUES
 (90000, "lo9e-amo1"),
 (90001, "lo9e-amo2"),
-(90002, "lo9e-amo3"),
-(90003, "lo9e-amo1");
+(90002, "lo9e-amo3");
 
 UPDATE studenten
 SET geboortedatum = "1993-09-27"
@@ -28,5 +27,15 @@ WHERE ov_nummer = 90000;
 UPDATE studenten
 SET actief = FALSE
 WHERE inschrijvings_datum   <"2017-01-01";
+
+SELECT studenten.ov_nummer, studenten.achternaam, studenten.tussenvoegsel, studenten.voornaam, klassen.klas_code, cohort, docenten.voorletters, docenten.tussenvoegsel, docenten.achternaam
+FROM studenten
+INNER JOIN klassen_studenten 
+ON studenten.ov_nummer = klassen_studenten.ov_nummer 
+INNER JOIN klassen
+ON klassen_studenten.klas_code = klassen.klas_code
+INNER JOIN docenten
+ON klassen.slb_code = docenten.docent_code
+ORDER BY klas_code, studenten.achternaam;
 
 
